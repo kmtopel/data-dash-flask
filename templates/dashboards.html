@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-sm-12" x-data="{ isVisible: false }">
+            <div class='card rounded m-3 text-center bg-dark' x-cloak>
+                <h5 class="card-title bg-dark text-white p-1 mt-2">
+                   Nonfatal Shootings and Homicides
+                </h5>
+
+                <div class='card-header p-1 mb-2'>
+                    <a href="{{ url_for('nonfatal_dash') }}" class="card-link text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-pie-chart-fill" viewBox="0 0 16 16">
+                            <path d="M15.985 8.5H8.207l-5.5 5.5a8 8 0 0 0 13.277-5.5zM2 13.292A8 8 0 0 1 7.5.015v7.778l-5.5 5.5zM8.5.015V7.5h7.485A8.001 8.001 0 0 0 8.5.015z"/>
+                          </svg>
+                    </a>
+                    <a href=" {{ url_for('nonfatal_dash_info') }}" class="card-link text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+                            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                        </svg>
+                    </a>
+                    <a href="#" @click="isVisible = !isVisible" :class="{ flip: isVisible }" class='card-link float-end border-0 text-text-decoration-none text-white'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+                          </svg>
+                    </a>
+                </div>
+                <div x-show="isVisible" class="card-body bg-light" x-transition x-cloak>
+                    <p>The homicide and nonfatal shooting information contained in these dashboards represents information maintained by the Milwaukee Homicide Review Commission (MHRC), based on records provided by the Milwaukee Police Department." </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+    
+        </div>
+        <div class="col-md-4 col-sm-12">
+    
+        </div>
+    </div>
+</div>
+{% endblock content %}
+{% block scripts %}
+
+{% endblock scripts %}

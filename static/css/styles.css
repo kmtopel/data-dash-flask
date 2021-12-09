@@ -1,0 +1,36 @@
+body {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+    min-height: 100vh;
+    position: relative;
+}
+
+.nav-item {
+    padding: 5px;
+    margin: 5px;
+}
+
+.footer-text {
+    font-size: 80%;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+}
+
+.flip {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.no-decor,
+.no-decor:focus,
+.no-decor:active,
+.no-decor:link,
+.no-decor:hover {
+    color: inherit;
+    text-decoration: inherit;
+}

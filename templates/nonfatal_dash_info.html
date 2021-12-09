@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <span style="display:flex; justify-content: center;">
+        <button class="btn btn-link text-black"  onclick="window.history.go(-1)"> 
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="inherit" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+            </svg> Return 
+        </button>
+        <a class="btn btn-link text-black" href=" {{ url_for('nonfatal_dash')}}"> 
+            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" fill="inherit" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+            </svg> Dashboard
+        </a>
+    </span>
+    <h2 class='text-center text-decoration-underline'>Nonfatal Shootings and Homicides Dashboard Technical Notes</h2>
+    <h3>Data Sources</h3>
+    <p>The homicide and nonfatal shooting information contained in these dashboards represents information maintained by the Milwaukee Homicide Review Commission (MHRC), based on records provided by the Milwaukee Police Department.  </p>
+    <h3>Background</h3>
+    <p>Since its inception, the MHRC has maintained a database that tracks homicides and nonfatal shootings in the City of Milwaukee. Historically, guidelines similar to the National Violent Death Reporting System (NVDRS) were followed. Data were abstracted from the Milwaukee Police Department and then coded according to the NVDRS protocol. A policy change in 2016 restricted access to the data on homicides and nonfatal shootings and, thus, MHRC was not able to independently verify, validate, or translate the data provided by MPD. Access to data was reinstated in 2018, but the data from 2016 forward has primarily been provided by MPD. For variables that require translation, such as primary factor, the information presented from 2016 forward is based primarily on the categorization completed by MPD and should not be compared directly to previous years. Some counts will differ from what the Milwaukee Police Department reports. However, the data is currently being validated and updated using a consistent coding process as prior years. When this process is complete, the data and documentation will be updated on the site. </p>
+    <h3>Definitions</h3>
+    <ol>
+        <li>
+            <h4 style="text-align: left;"><i>Homicide</i></h4>
+            <p><a class="link" href="https://www.bjs.gov/ucrdata/offenses.cfm" target="_">According to the FBI’s Uniform Crime Reporting (UCR) Program</a> a criminal homicide includes two categories:</p>
+            <ul style="text-align: left">
+                <li>Murder and nonnegligent manslaughter—the willful (nonnegligent) killing of one human being by another.</li>
+                <li>Manslaughter by negligence—the killing of another person through gross negligence.</li>
+            </ul>
+        </li>
+        <li>
+            <h4 style="text-align: left;"><i>Nonfatal shooting</i></h4>
+            <p>Defined as an injury resulting from a firearm discharge which breaks the skin but does not cause death.</p>
+            <p>It should be noted that these terms are used since they are standard language for crime classification. However, we recognize and respect that this language may not reflect the impact of these violent events on victims, family, friends, and the community. The intent of these dashboards is to share information to support prevention and intervention activities to help reduce future violence within Milwaukee.</p>
+        </li>
+    </ol>
+    <h3>Data Notes</h3>
+    <p>For this dashboard, the following counting rules and definitions apply and may lead to differences compared to other reported numbers on homicides and nonfatal shootings.</p>
+    <ul style="text-align: left;">
+        <li>Only homicides or nonfatal shootings that occurred in the City of Milwaukee and were reported to the Milwaukee Police Department (MPD) are included in the counts. </li>
+        <li>Homicides and Nonfatal shootings that are marked as self-defense are not included.</li>
+        <li>Dates are based on the date of the incident for nonfatal shootings and homicides (not the date of death). </li>
+        <li>Both nonfatal shooting and homicide incident are counted per victim. One event could include a homicide incident and/or a nonfatal shooting incident. A single event could be counted in both categories.  </li>
+        <li>Homicides can be counted in several ways depending on the definition and intended use of the data. They can be counted by date of incident (injury), date of death or date determined a homicide and may be counted by victim, incident (incidents may have multiple victims), Wisconsin state statute, FBI Uniform Crime Reporting (UCR), or death certificate definition. None of these counting methods provide inaccurate information; they are just different ways to count homicides and may lead to differences in counts across sources. The counts included on these dashboards are based on the UCR definition of homicide including murder and non-negligent manslaughter only, the date of incident, and are counted by victim, unless otherwise indicated. Given those reasons in some instances final counts will not match what the Milwaukee Police Department reports. All homicides are included, regardless of weapon used or manner of death.</li>
+        <li>Geographic analysis is based on the location recorded for the incident. Any incidents with missing or unknown locations would not be displayed on the map.</li>
+        <li>Domestic violence and intimate partner violence incidents were combined for primary factor. </li>
+        <li>Census tract shapefile was obtained from the <a class='link' href="https://www.census.gov">census.gov</a>.</li> 
+    </ul>
+    <h3>Analytic Notes</h3>
+    <p>All rates are calculated per 100,000 population. Population estimates were obtained from <a class="link" href="https://www.census.gov">census.gov</a>. Rates were not calculated for counts less than 5 because low counts can produce unstable rates. </p>
+    <h3>Contact</h3>
+    <p>For any questions related to the data presented in this dashboard, <a class="link" href="#">feel free to reach out to the team via email.</a></p>
+</div>
+{% endblock content %}
