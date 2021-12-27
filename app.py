@@ -23,4 +23,4 @@ def nonfatal_dash_info():
 
 @app.route('/dashboards-and-visualizations/nonfatal-shootings-and-homicides/dashboard')
 def nonfatal_dash():
-    return render_template('nonfatal_dash.html')
+    return render_template('nonfatal_dash.html', showFooter=False)

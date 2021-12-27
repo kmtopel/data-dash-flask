@@ -1,18 +1,23 @@
 {% extends "base.html" %}
+{% block styles %}
+<script src="//unpkg.com/alpinejs" defer></script>
+{% endblock styles %}
+
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col-md-4 col-sm-12" x-data="{ isVisible: false }">
+        <div class="col-md-4 col-sm-12" x-data="{ isVisible: true }" x-cloak x-init="{ showFooter: '{{showFooter}}' }">
             <div class='card rounded m-3 text-center bg-dark' x-cloak>
                 <h5 class="card-title bg-dark text-white p-1 mt-2">
                    Nonfatal Shootings and Homicides
                 </h5>
 
                 <div class='card-header p-1 mb-2'>
+                    
                     <a href="{{ url_for('nonfatal_dash') }}" class="card-link text-white">
                         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-pie-chart-fill" viewBox="0 0 16 16">
                             <path d="M15.985 8.5H8.207l-5.5 5.5a8 8 0 0 0 13.277-5.5zM2 13.292A8 8 0 0 1 7.5.015v7.778l-5.5 5.5zM8.5.015V7.5h7.485A8.001 8.001 0 0 0 8.5.015z"/>
-                          </svg>
+                        </svg>
                     </a>
                     <a href=" {{ url_for('nonfatal_dash_info') }}" class="card-link text-white">
                         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
@@ -25,8 +30,8 @@
                           </svg>
                     </a>
                 </div>
-                <div x-show="isVisible" class="card-body bg-light" x-transition x-cloak>
-                    <p>The homicide and nonfatal shooting information contained in these dashboards represents information maintained by the Milwaukee Homicide Review Commission (MHRC), based on records provided by the Milwaukee Police Department." </p>
+                <div x-show="isVisible" class="card-body bg-light p-4">
+                    <p>The homicide and nonfatal shooting information contained in these dashboards represents information maintained by the Milwaukee Homicide Review Commission (MHRC), based on records provided by the Milwaukee Police Department. </p>
                 </div>
             </div>
         </div>
