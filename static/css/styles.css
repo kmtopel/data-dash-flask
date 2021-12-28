@@ -1,5 +1,6 @@
 body {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
+    /* font-family: Avenir, Helvetica, Arial, sans-serif; */
+    font-family: 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
@@ -7,9 +8,14 @@ body {
     position: relative;
 }
 
-.nav-item {
-    padding: 5px;
-    margin: 5px;
+.card-list {
+    list-style-type: none;
+}
+
+.card-item {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
 }
 
 .footer-text {
@@ -33,4 +39,12 @@ footer {
 .no-decor:hover {
     color: inherit;
     text-decoration: inherit;
+}
+
+.bg-darker-grey {
+    background-color: #1D1D1D;
+}
+
+.bg-dark-grey {
+    background-color: #424242;
 }
