@@ -2,9 +2,6 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-if __name__=="__main__":
-    app.run(debug=True)
-
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -24,3 +21,6 @@ def nonfatal_dash_info():
 @app.route('/dashboards-and-visualizations/nonfatal-shootings-and-homicides/dashboard')
 def nonfatal_dash():
     return render_template('nonfatal_dash.html', showFooter=False)
+
+if __name__=="__main__":
+    app.run()
