@@ -6,7 +6,7 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col-md-4 col-sm-12" x-data="{ isVisible: true }" x-cloak x-init="{ showFooter: '{{showFooter}}' }">
+        <!--<div class="col-md-4 col-sm-12" x-data="{ isVisible: true }" x-cloak x-init="{ showFooter: '{{showFooter}}' }">
 
             <div class="card-group  d-flex flex-column bg-dark-grey mt-3 shadow-lg rounded">
                 <div class='card mb-0 text-center bg-dark-grey'>
@@ -40,9 +40,36 @@
                         </div>
                     </div> 
                 </div>  
-            </div
-            >
-        </div>   
+            </div>
+        </div>    -->
+        <div class="col d-flex justify-content-center">
+            <div class="card mt-5 shadow-lg border rounded border-dark" style="max-width: 75%;">
+                <div class="row g-0">
+                  <div class="col-md-4 col-12">
+                    <img class="card-img d-none d-md-block" src="static/css/homicide-dash-thumbnail.png" />
+                  </div>
+                  <div class="col-md-8 col-12">
+                    <div class="bg-dark-grey border-0 d-flex justify-content-around">
+                        <a href="{{ url_for('nonfatal_dash') }}" class="card-item m-1 text-white">
+                            <i class="fas fa-chart-area"></i>
+                            Dashboard
+                        </a>
+
+                        <a href=" {{ url_for('nonfatal_dash_info') }}" class="card-item m-1 text-white">
+                            <i class="fas fa-info-circle"></i>
+                            Information
+                        </a>
+                    </div>
+                    <div class="card-body ">
+                      <h5 class="card-title fw-bolder text-center">Nonfatal Shootings and Homicides</h5>
+                      <p class="card-text">The homicide and nonfatal shooting information contained in these dashboards represents information maintained by the Milwaukee Homicide Review Commission (MHRC), based on records provided by the Milwaukee Police Department.
+                    </p>
+                      <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
     </div>
 </div>
 {% endblock content %}

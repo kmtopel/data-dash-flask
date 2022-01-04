@@ -7,9 +7,10 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
 
     <!-- Alipine.js -->
-    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="//unpkg.com/alpinejs" ></script>
 
     <!-- Fonts and Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,7 +49,7 @@
                         </a>
                     </li>
                     <li class="nav-item mx-5">
-                        <a class="nav-link active" href="#">
+                        <a class="nav-link active" href="{{ url_for('resources') }}">
                             <i class="fas fa-cogs"></i>
                             Resources
                         </a>
@@ -62,6 +63,7 @@
         {% block content %}{% endblock content %}
         {% block scripts %}{% endblock scripts %}   
         <div class='mb-5'></div>     
+        
         <footer x-data="{footerVisible: false }" class="row overflow-auto navbar bg-dark-grey text-light text-center fixed-bottom footer-text">
             <button href="#" @click="footerVisible = !footerVisible" :class="{ flip: footerVisible }" class='bg-dark-grey text-white border-0 text-decoration-none'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
@@ -77,7 +79,8 @@
             </p>
             <div>Copyright © 2021</div>
         </footer>
-    </div>
+    </span>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   </body>
 </html>
