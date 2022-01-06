@@ -4,52 +4,13 @@
 {% endblock styles %}
 
 {% block content %}
-<div class="container">
+<div class="container-fluid mt-2 mt-md-5">
     <div class="row">
-        <!--<div class="col-md-4 col-sm-12" x-data="{ isVisible: true }" x-cloak x-init="{ showFooter: '{{showFooter}}' }">
-
-            <div class="card-group  d-flex flex-column bg-dark-grey mt-3 shadow-lg rounded">
-                <div class='card mb-0 text-center bg-dark-grey'>
-                    <h5 class="card-title fw-bolder bg-dark-grey text-white p-1 mt-2">
-                    Nonfatal Shootings and Homicides
-                    </h5>
-                    <div class='card-header d-flex flex-row justify-content-center'>                    
-                        <a href="{{ url_for('nonfatal_dash') }}" class="card-item text-white m-1">
-                            <i class="fas fa-chart-area"></i>
-                            Dashboard
-                        </a>
-
-                        <a href=" {{ url_for('nonfatal_dash_info') }}" class="card-item text-white m-1">
-                            <i class="fas fa-info-circle"></i>
-                            Information
-                        </a>
-                        <span class="d-flex float-end">
-                            <a href="#" @click="isVisible = !isVisible" :class="{ flip: isVisible }" class='card-link  border-0 text-text-decoration-none text-white'>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
-                                </svg>
-                            </a>
-                        </span>
-                    </div>
-                </div>
-                <div class='card rounded-0 mt-0 mb-0 border-0 mx-0 text-center bg-dark-grey' x-show="isVisible" x-cloak>
-                    <img class="card-img rounded-0 " src="static/css/homicide-dash-thumbnail.png"></img>
-                    <div class="card-img-overlay ">
-                        <div class="bg-darker-grey fw-bold opacity-50 rounded text-light p-1 mt-md-5 card-text">
-                            The homicide and nonfatal shooting information contained in these dashboards represents information maintained by the Milwaukee Homicide Review Commission (MHRC), based on records provided by the Milwaukee Police Department.
-                        </div>
-                    </div> 
-                </div>  
-            </div>
-        </div>    -->
-        <div class="col d-flex justify-content-center">
-            <div class="card mt-5 shadow-lg border rounded border-dark" style="max-width: 75%;">
+        <div class="col-12 col-sm-6 col-md-4 mt-md-0 d-flex justify-content-center">
+            <div class="card shadow-lg border rounded border-dark">
                 <div class="row g-0">
-                  <div class="col-md-4 col-12">
-                    <img class="card-img d-none d-md-block" src="static/css/homicide-dash-thumbnail.png" />
-                  </div>
-                  <div class="col-md-8 col-12">
-                    <div class="bg-dark-grey border-0 d-flex justify-content-around">
+                  <div class="col-12">
+                    <div class="card-header bg-dark-grey border-0 d-flex justify-content-around">
                         <a href="{{ url_for('nonfatal_dash') }}" class="card-item m-1 text-white">
                             <i class="fas fa-chart-area"></i>
                             Dashboard
@@ -64,11 +25,59 @@
                       <h5 class="card-title fw-bolder text-center">Nonfatal Shootings and Homicides</h5>
                       <p class="card-text">The homicide and nonfatal shooting information contained in these dashboards represents information maintained by the Milwaukee Homicide Review Commission (MHRC), based on records provided by the Milwaukee Police Department.
                     </p>
-                      <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
                     </div>
                   </div>
                 </div>
-              </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 mt-2 mt-md-0 d-flex justify-content-center">
+            <div class="card shadow-lg border rounded border-dark" >
+                <div class="row g-0">
+                  <div class="col-12">
+                    <div class="card-header bg-dark-grey border-0 d-flex justify-content-around">
+                        <a href="{{ url_for('hospital_interven') }}" class="card-item m-1 text-white">
+                            <i class="fas fa-chart-area"></i>
+                            Dashboard
+                        </a>
+
+                        <a href=" {{ url_for('hospital_interven_info') }}" class="card-item m-1 text-white">
+                            <i class="fas fa-info-circle"></i>
+                            Information
+                        </a>
+                    </div>
+                    <div class="card-body ">
+                      <h5 class="card-title fw-bolder text-center">Hospital Intervention Response to Shootings</h5>
+                      <p class="card-text">Patients treated at Froedtert Hospital for a gun shot wound that occurred in the City of Milwaukee, who are referred to the 414LIFE program in the City of Milwaukee. 
+                    </p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+       
+        <div class="col-12 col-sm-6 col-md-4 mt-2 mt-md-0 d-flex justify-content-center">
+            <div class="card shadow-lg border rounded border-dark">
+                <div class="row g-0">
+                  <div class="col-12">
+                    <div class="card-header bg-dark-grey border-0 d-flex justify-content-around">
+                        <a href="{{ url_for('hospital_emergen') }}" class="card-item m-1 text-white">
+                            <i class="fas fa-chart-area"></i>
+                            Dashboard
+                        </a>
+
+                        <a href=" {{ url_for('hospital_emergen_info') }}" class="card-item m-1 text-white">
+                            <i class="fas fa-info-circle"></i>
+                            Information
+                        </a>
+                    </div>
+                    <div class="card-body ">
+                      <h5 class="card-title fw-bolder text-center">Hospital Emergency Room Data for Assault-Related Injuries</h5>
+                      <p class="card-text">The homicide and nonfatal shooting information contained in these dashboards represents information maintained by the Milwaukee Homicide Review Commission (MHRC), based on records provided by the Milwaukee Police Department.
+                    </p>
+                    </div>
+                  </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

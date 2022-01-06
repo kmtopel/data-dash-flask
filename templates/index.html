@@ -4,32 +4,43 @@
    <div class="row d-flex justify-content-center border-rounded">
        <div class="col-md-10">
             <div class="card mt-md-5 mt-2 shadow-lg">
-                <h3 class="card-title text-center bg-dark-grey text-white p-3 shadow-sm">Bringing Data and Partners Together to Prevent and Reduce Violence</h3>
+                <h3 class="card-title fw-bold text-center bg-dark-grey text-white p-3 shadow-sm">Bringing Data and Partners Together to Prevent and Reduce Violence</h3>
                 <div class="card-body">
                     <h6 class='card-subtitle fw-bolder text-left'>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lightning-charge-fill" viewBox="0 0 16 16">
-                        <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/>
-                      </svg> Purpose</h6>
+                     Purpose</h6>
                     <p class='card-text'>
-                        The purpose of this website is to provide a centralized resource, including a public-facing, real-time violence data dashboard for the City of Milwaukee.
-                    </p>
+                        The purpose of this website is to provide a centralized resource, that includes a near real-time violence data dashboard from multiple sources of data. This shared information can be used to further the understanding of the burden of community violence, the response to violence, and violence prevention efforts in and around Milwaukee, Wisconsin.                     </p>
                     <h6 class='card-subtitle fw-bolder text-left'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lightning-charge-fill" viewBox="0 0 16 16">
-                            <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/>
-                          </svg> About</h6>
+                        About</h6>
                     <p class='card-text'> 
-                        As the region grapples with record levels of violence and injury, it is imperative to put data in the hands of the community members and organizations carrying out community-engaged violence intervention and prevention work. This effort is unique in that it is bringing together multiple existing, disparate datasets to create more real-time data sharing across systems. These data will inform community organizations, community members, and researchers in near real-time about violence patterns, and provide a new tool to support the neighborhoods and communities most impacted by violence.
+                        As we work together to address violence in our community, it is imperative to put data in the hands of community members and organizations carrying out community-engaged violence intervention and prevention work. This effort is unique in that it is bringing together multiple existing, disparate datasets to create more real-time data sharing across systems. These data are intended to inform community organizations, community members, stakeholders, and researchers about violence patterns, and provide a new tool to support the neighborhoods and communities working to reduce the impact of violence. This effort aligns with Goal 1A. of Milwaukee’s <a target="#" href="https://www.preventioninstitute.org/sites/default/files/publications/Milwaukee%20Blueprint%20for%20Peace.pdf">Blueprint for Peace</a>: enhance local capacity to access, analyze, and utilize violence-related data from a variety of sources to inform violence prevention efforts.  
+                    </p>
+                    <h6 class='card-subtitle fw-bolder text-left'>Data Sources</h6>
+                    <p>
+                        Each data source will be updated regularly on this site. Information is provided with the dashboard for each data source, the associated methodology and data notes. 
                     </p>
                     <h6 class='card-subtitle fw-bolder'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lightning-charge-fill" viewBox="0 0 16 16">
-                            <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/>
-                          </svg> Contact</h6>
+                        Contact</h6>
                     <p class='card-text'>
-                        Feedback on the site and data visualizations is welcome!
-                    </p>
+                        Feedback or questions on the website, dashboard, and data visualizations are welcome! Please reach out to the team using <a href="#">this link.</a></p>
                 </div>
             </div>
        </div>
    </div> 
 </div>
 {% endblock content %}
+
+{% block footer %}
+<button href="#" @click="footerVisible = !footerVisible" :class="{ flip: footerVisible }" class='bg-dark-grey text-white border-0 text-decoration-none'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z"/>
+    </svg>
+</button>
+<p  x-show="footerVisible" class="fw-lighter lh-2" x-transform>
+    The website, data dashboard, and visualizations were developed by a collaborative team of partners, convened by the Comprehensive Injury Center (CIC) at the Medical College of Wisconsin. 
+    <br>
+    Funding for this project was through a Data Science Demonstration project award (#9212757) from the American Public Health Association (APHA) <br> and supported by the Centers for Disease Control and Prevention (CDC) and may not represent the views of APHA or the CDC.
+    <br>
+    
+</p>
+{% endblock footer %}

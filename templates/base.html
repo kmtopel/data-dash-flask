@@ -31,7 +31,7 @@
         
         <nav class="row navbar navbar-expand-lg navbar-dark bg-dark-grey shadow-lg">
             <div class="container-fluid">
-                <a class="navbar-brand mx-5 fw-bolder shadow-sm" href="{{ url_for('index') }}">Milwaukee Violence Prevention Data Dashboard</a>
+                <a class="navbar-brand text-wrap fw-bolder shadow-sm" href="{{ url_for('index') }}">Milwaukee Violence Prevention Data Dashboard</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
@@ -63,20 +63,8 @@
         {% block content %}{% endblock content %}
         {% block scripts %}{% endblock scripts %}   
         <div class='mb-5'></div>     
-        
-        <footer x-data="{footerVisible: false }" class="row overflow-auto navbar bg-dark-grey text-light text-center fixed-bottom footer-text">
-            <button href="#" @click="footerVisible = !footerVisible" :class="{ flip: footerVisible }" class='bg-dark-grey text-white border-0 text-decoration-none'>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z"/>
-                </svg>
-                </button>
-            <p  x-show="footerVisible" class="fw-lighter lh-2" x-transform>
-                The website, data dashboard, and visualizations were developed by a collaborative team of partners, convened by the Comprehensive Injury Center (CIC) at the Medical College of Wisconsin. 
-                <br>
-                Funding for this project was through a Data Science Demonstration project award (#XX) from the American Public Health Association (APHA) <br> and supported by the Centers for Disease Control and Prevention (CDC) and may not represent the views of APHA or the CDC.
-                <br>
-                
-            </p>
+        <footer x-data="{footerVisible: true }" class="row overflow-auto navbar bg-dark-grey text-light text-center fixed-bottom footer-text">
+            {% block footer %} {% endblock footer%}
             <div>Copyright © 2021</div>
         </footer>
     </span>
