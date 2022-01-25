@@ -1,15 +1,11 @@
 from flask import Flask, render_template
-# import tableauserverclient as TSC
-
-# tableau_auth = TSC.TableauAuth('USERNAME', 'PASSWORD', 'SITENAME')
-# server = TSC.Server('http://SERVER_URL')
-
-# with server.auth.sign_in(tableau_auth):
-#     all_datasources, pagination_item = server.datasources.get()
-#     print("\nThere are {} datasources on site: ".format(pagination_item.total_available))
-#     print([datasource.name for datasource in all_datasources])
+from datetime import datetime
 
 app = Flask(__name__)
+
+@app.context_processor
+def inject_now():
+    return {'current_year': datetime.utcnow().strftime("%Y")}
 
 @app.route('/')
 def index():
